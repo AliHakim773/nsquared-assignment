@@ -101,10 +101,16 @@ a {
 }
 @container weather (width < 120px) {
     .weather {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         & h2 {
             font-size: 16px;
         }
         .extra-info {
+            display: none;
+        }
+        .description {
             display: none;
         }
     }
@@ -171,6 +177,60 @@ a {
 @container github (height < 200px) {
     .github {
         .bio {
+            display: none;
+        }
+    }
+}
+
+.news {
+    container: news / size;
+    display: flex;
+    flex-direction: column;
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        margin-bottom: 10px;
+        > div {
+            cursor: pointer;
+            &:hover {
+                color: #c0202c;
+            }
+        }
+    }
+    .body {
+        display: flex;
+        gap: 10px;
+        .img {
+            width: 180px;
+            height: 180px;
+            flex: 1;
+        }
+        .img > img {
+            height: 100%;
+            aspect-ratio: 1;
+            -o-object-fit: cover;
+               object-fit: cover;
+        }
+        .summary {
+            margin-block: 4px;
+        }
+        .source {
+            font-size: 12px;
+            color: grey;
+        }
+    }
+}
+@container news (width < 400px) {
+    .news {
+        .img {
+            display: none;
+        }
+    }
+}
+@container news (width < 200px) and  (height < 200px) {
+    .news {
+        .summary {
             display: none;
         }
     }

@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/js/weather.js": "/js/weather.js",
     "/js/github.js": "/js/github.js",
+    "/js/spacenews.js": "/js/spacenews.js",
     "/css/app.css": "/css/app.css"
 }

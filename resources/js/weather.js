@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const getWeather = async () => {
+    console.log("Hello");
     const res = await axios.get("/weather");
+    console.log(res.data);
     const weather = res.data;
     const day = weather[0].days[0];
 

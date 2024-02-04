@@ -6301,9 +6301,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!*********************************!*\
-  !*** ./resources/js/weather.js ***!
-  \*********************************/
+/*!***********************************!*\
+  !*** ./resources/js/spacenews.js ***!
+  \***********************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -6311,43 +6311,61 @@ function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyri
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var getWeather = /*#__PURE__*/function () {
+var next = document.querySelector(".next");
+var prev = document.querySelector(".prev");
+var get_news = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var res, weather, day, temp, tempmin, tempmax, description, loc, icon;
+    var requestUrl,
+      res,
+      nextUrl,
+      previoseUrl,
+      news,
+      url,
+      title,
+      image,
+      source,
+      summary,
+      _args = arguments;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          console.log("Hello");
+          requestUrl = _args.length > 0 && _args[0] !== undefined ? _args[0] : "https://api.spaceflightnewsapi.net/v4/blogs/?limit=1";
           _context.next = 3;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get("/weather");
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(requestUrl);
         case 3:
           res = _context.sent;
-          console.log(res.data);
-          weather = res.data;
-          day = weather[0].days[0];
-          temp = day.temp;
-          tempmin = day.tempmin;
-          tempmax = day.tempmax;
-          description = weather[0].description;
-          loc = weather[0].timezone;
-          icon = day.icon;
-          document.querySelector(".temp").innerHTML = temp + " °F";
-          document.querySelector(".description").innerHTML = description;
-          document.querySelector(".location").innerHTML = loc.split("/")[1].split("_").join(" ");
-          document.querySelector(".icon > img").src = "/images/".concat(icon, ".svg");
-          document.querySelector(".tempmin").innerHTML = tempmin;
-          document.querySelector(".tempmax").innerHTML = tempmax;
-        case 19:
+          nextUrl = res.data.next;
+          previoseUrl = res.data.previose;
+          news = res.data.results[0];
+          console.log(news);
+          url = news.url;
+          title = news.title;
+          image = news.image_url;
+          source = news.news_site;
+          summary = news.summary;
+          console.log(url, title, image, source, summary);
+          document.querySelector(".title").innerHTML = title;
+          document.querySelector(".img > img").src = image;
+          document.querySelector(".summary").innerHTML = summary;
+          document.querySelector(".source > a").innerHTML = source;
+          document.querySelector(".source > a").href = url;
+          next.addEventListener("click", function () {
+            get_news(nextUrl);
+          });
+          prev.addEventListener("click", function () {
+            get_news(previoseUrl);
+          });
+        case 21:
         case "end":
           return _context.stop();
       }
     }, _callee);
   }));
-  return function getWeather() {
+  return function get_news() {
     return _ref.apply(this, arguments);
   };
 }();
-getWeather();
+get_news();
 })();
 
 /******/ })()
