@@ -18,7 +18,9 @@
                 {{-- <div class="grid-stack-item" gs-h='2' gs-w='3'>
                     <div class="grid-stack-item-content" >@include('weather')</div>
                 </div> --}}
-    
+                <div class="grid-stack-item" gs-h='2' gs-w='3'>
+                    <div class="grid-stack-item-content" >@include('github')</div>
+                </div>
 
             </div>
         </main>

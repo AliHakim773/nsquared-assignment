@@ -22,6 +22,14 @@ aside {
 main {
     flex: 1;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        color: #c0202c;
+    }
+}
 .page {
     display: flex;
     overflow-y: auto;
@@ -97,6 +105,71 @@ main {
             font-size: 16px;
         }
         .extra-info {
+            display: none;
+        }
+    }
+}
+
+.github {
+    container: github / size;
+
+    .header,
+    & .github-info {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .user-avatar {
+        &,
+        & > img {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+        }
+    }
+    .profile {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+
+        .repos {
+            font-size: 14px;
+        }
+    }
+    .bio {
+        margin-block: 15px;
+    }
+    .follow {
+        display: flex;
+        gap: 5px;
+        align-items: flex-end;
+    }
+}
+
+@container github (width < 200px) {
+    .github {
+        .user-avatar {
+            display: none;
+        }
+        .profile {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2px;
+            .dot {
+                display: none;
+            }
+        }
+        .follow {
+            .follow-rest {
+                display: none;
+            }
+        }
+    }
+}
+@container github (height < 200px) {
+    .github {
+        .bio {
             display: none;
         }
     }

@@ -12220,7 +12220,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 gridstack__WEBPACK_IMPORTED_MODULE_2__.GridStack.initAll({
   margin: 5,
   columnOpts: {

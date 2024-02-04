@@ -1,5 +1,4 @@
 import "./bootstrap.js";
-import axios from "axios";
 
 import "gridstack/dist/gridstack.min.css";
 import { GridStack } from "gridstack";
