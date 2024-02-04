@@ -4,6 +4,10 @@
     margin: 0;
     padding: 0;
 }
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
 aside {
     width: 200px;
     height: 100vh;
@@ -24,6 +28,8 @@ main {
     overflow-x: hidden;
 }
 .grid-stack-item-content {
+    padding: 10px;
+    border-radius: 10px;
     border: 1px solid black;
 }
 .logo {
@@ -33,6 +39,66 @@ main {
     justify-content: center;
     > img {
         height: 100%;
+    }
+}
+.widget {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.weather {
+    container: weather / size;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .extra-info {
+        flex-basis: 100px;
+    }
+    .temp {
+        font-weight: 600;
+    }
+    .extra-info {
+        display: flex;
+        flex-direction: column;
+        margin-block: auto;
+        .icon {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .minmax {
+        display: flex;
+        justify-content: space-between;
+        .tempmax {
+            color: rgb(255, 120, 120);
+        }
+        .tempmin {
+            color: rgb(93, 160, 255);
+        }
+    }
+    .description {
+        margin-top: 20px;
+    }
+}
+
+@container weather (height < 80px) {
+    .weather {
+        .description {
+            display: none;
+        }
+    }
+}
+@container weather (width < 120px) {
+    .weather {
+        & h2 {
+            font-size: 16px;
+        }
+        .extra-info {
+            display: none;
+        }
     }
 }
 

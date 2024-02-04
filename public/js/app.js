@@ -12220,8 +12220,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 gridstack__WEBPACK_IMPORTED_MODULE_2__.GridStack.initAll({
-  margin: 5
+  margin: 5,
+  columnOpts: {
+    columnMax: 8,
+    breakpoints: [{
+      w: 600,
+      c: 6
+    }, {
+      w: 400,
+      c: 4
+    }, {
+      w: 300,
+      c: 2
+    }]
+  }
 });
 
 /***/ }),
