@@ -1,5 +1,8 @@
 ## N Squared Assignment
 
+### Project Description
+Create a dashboard that has sortable and resizable width so that the user can customize freelee
+
 ### How to Run
 
 #### Prequisites:
