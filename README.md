@@ -1,7 +1,7 @@
 ## N Squared Assignment
 
 ### Project Description
-Create a dashboard that has sortable and resizable width so that the user can customize freelee
+Create a dashboard that has sortable and resizable width so that the user can customize freelee using the blade templating engine in laravel
 
 ### How to Run
 
