@@ -3,9 +3,9 @@
 ### How to Run
 
 #### Prequisites:
-- PHP (Click [here](https://www.php.net/manual/en/install.php) for instructions)
-- Composer (click [here](https://getcomposer.org/download/) for instructions)
-- Git (click [here](https://git-scm.com/downloads) for instructions)
+- PHP (Click [here](https://www.php.net/manual/en/install.php) for download instructions)
+- Composer (click [here](https://getcomposer.org/download/) for download instructions)
+- Git (click [here](https://git-scm.com/downloads) for download instructions)
 
 #### Instructions:
 - Open the cmd in the folder you want to install the project in.
