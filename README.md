@@ -1,7 +1,7 @@
 ## N Squared Assignment
 
 ### Project Description
-Create a dashboard that has sortable and resizable widgets so that the user can customize freelee using the blade templating engine in laravel.
+Create a dashboard that has sortable and resizable widgets so that the user can freelee cutomize his page using the blade templating engine in laravel.
 
 ### How to Run
 
