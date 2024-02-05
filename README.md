@@ -11,9 +11,9 @@
 - Open the cmd in the folder you want to install the project in.
 - Enter these commands.
    ```sh
-       git clone https://github.com/AliHakim773/nsquared-assignment.git
-       cd nsquared-assignment
-       composer install
+   git clone https://github.com/AliHakim773/nsquared-assignment.git
+   cd nsquared-assignment
+   composer install
     ```
 - To run the project, enter the following command in the directory of the project.
     ```sh
