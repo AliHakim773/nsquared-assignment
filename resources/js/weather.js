@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const getWeather = async () => {
-    console.log("Hello");
     const res = await axios.get("/weather");
-    console.log(res.data);
     const weather = res.data;
     const day = weather[0].days[0];
 
@@ -25,4 +23,30 @@ const getWeather = async () => {
     document.querySelector(".tempmax").innerHTML = tempmax;
 };
 
-getWeather();
+export default getWeather;
+
+export const weatherWidget = `
+        <div gs-h='1' gs-w='3'>
+            <div class="grid-stack-item-content" >
+                <div class="widget weather" id="weather_widget">
+                    <div class="header">
+                        <div class="main-info">
+                            <h2>Weather</h2>
+                            <div class="temp">Loading...</div>
+                            <div class="location">Loadding...</div>      
+                        </div>
+                        <div class="extra-info">
+                            <div class="icon">
+                                <img src="" alt="">
+                            </div>
+                            <div class="minmax">
+                                <div class="tempmin">Loading...</div>
+                                <div class="tempmax">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="description">Loading...</div>
+                    </div>
+            </div>
+        </div>
+        `;

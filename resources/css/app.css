@@ -126,11 +126,49 @@ a {
         align-items: center;
         justify-content: space-between;
     }
+    .github-title {
+        position: relative;
+        .github-edit {
+            cursor: pointer;
+            height: 15px;
+            position: absolute;
+            right: -50%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+        }
+    }
+
+    &:hover .github-edit {
+        display: block;
+    }
+    .github-user-select {
+        position: absolute;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 0.5rem;
+        & input {
+            border: none;
+            &:focus {
+                outline: none;
+            }
+            border-bottom: 1px solid black;
+        }
+        & button {
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 0.2rem;
+        }
+    }
     .user-avatar {
         &,
         & > img {
             height: 60px;
             width: 60px;
+        }
+        & > img {
             object-fit: cover;
         }
     }
@@ -232,4 +270,48 @@ a {
             display: none;
         }
     }
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    & h2 {
+        text-align: center;
+        margin-block: 1rem 1.5rem;
+    }
+
+    & button {
+        margin: 0.25rem 0.5rem;
+        padding-block: 0.25rem;
+        background-color: #c0202b1f;
+        border-radius: 10px;
+        border: 2px solid #c0202c;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #c0202b81;
+        }
+    }
+
+    .trash {
+        height: 75px !important;
+        width: 75px;
+        margin-top: auto;
+        margin-bottom: 50px;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 2cqmin;
+        background-color: #ff626d8c;
+        cursor: default;
+    }
+    .trash-svg {
+        text-align: center;
+    }
+}
+
+.hide {
+    display: none !important;
 }

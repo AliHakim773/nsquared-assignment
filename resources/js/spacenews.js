@@ -1,8 +1,5 @@
 import axios from "axios";
 
-const next = document.querySelector(".next");
-const prev = document.querySelector(".prev");
-
 const get_news = async (
     requestUrl = "https://api.spaceflightnewsapi.net/v4/blogs/?limit=1"
 ) => {
@@ -26,12 +23,43 @@ const get_news = async (
     document.querySelector(".source > a").innerHTML = source;
     document.querySelector(".source > a").href = url;
 
-    next.addEventListener("click", () => {
+    document.querySelector(".next").addEventListener("click", () => {
         get_news(nextUrl);
     });
-    prev.addEventListener("click", () => {
+    document.querySelector(".prev").addEventListener("click", () => {
         get_news(previoseUrl);
     });
 };
 
-get_news();
+export default get_news;
+
+export const newsWidget = `
+        <div gs-h='2' gs-w='4'>
+            <div class="grid-stack-item-content" >
+                <div class="widget news" id="news_widget">
+                    <h2>News</h2>
+                    <div class="body">
+                        <div class="img">
+                            <img src="" alt="">
+                        </div>
+                        <div class="content">
+                            <h3 class="title">Loading...</h3>
+                            <div class="summary">Loading...</div>
+                            <div class="source">
+                                Source: 
+                                <a href="#" target="_blank">Loading...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <div class="prev">
+                            prev
+                        </div>
+                        <div class="next">
+                            next
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;

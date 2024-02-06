@@ -13,18 +13,7 @@
     <div class="page">
         @include('sidenav')
         <main>
-
             <div class="grid-stack">
-                <div class="grid-stack-item" gs-h='2' gs-w='3'>
-                    <div class="grid-stack-item-content" >@include('github')</div>
-                </div>
-                <div class="grid-stack-item" gs-h='1' gs-w='3'>
-                    <div class="grid-stack-item-content" >@include('weather')</div>
-                </div>
-                <div class="grid-stack-item" gs-h='2' gs-w='4'>
-                    <div class="grid-stack-item-content" >@include('spacenews')</div>
-                </div>
-
             </div>
         </main>
     </div>
